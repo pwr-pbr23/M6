@@ -1,6 +1,7 @@
 import pandas as pd
 import os, re
 import numpy as np
+from tqdm import tqdm
 
 from my_util import *
 
@@ -161,6 +162,6 @@ def preprocess_data(proj_name):
         all_df.to_csv(save_dir+rel+".csv",index=False)
         print('finish release {}'.format(rel))
 
-for proj in list(all_releases.keys()):
+for proj in tqdm(list(all_releases.keys())):
     preprocess_data(proj)
 
