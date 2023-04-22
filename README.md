@@ -1,5 +1,14 @@
 # Topic: DeepLineDP: Towards a Deep Learning Approach for Line-Level Defect Prediction
-PBR23M6
+
+## Approach towards extending the original repository
+Original repository for research paper was separated into two:
+- supplementary materials (scripts for training models) - 
+the original from [awsm-research/DeepLineDP](https://github.com/awsm-research/DeepLineDP) 
+was pasted into [DeepLineDP](/DeepLineDP) folder.
+- database - original from [awsm-research/line-level-defect-prediction](https://github.com/awsm-research/line-level-defect-prediction)
+was pasted into [DeepLineDP/datasets](/DeepLineDP/datasets) folder.
+
+We decided to merge two repositories in order to make reproduction easier.
 
 ## Suplementar articles
 - LineVD: Statement-level Vulnerability Detection using Graph Neural Networks
