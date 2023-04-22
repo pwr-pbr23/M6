@@ -1,26 +1,23 @@
-# Topic: DeepLineDP: Towards a Deep Learning Approach for Line-Level Defect Prediction
+# Reproduction of DeepLineDP
+The aim of this project was to reproduce the following research paper:
+> _C. Pornprasit; C. Kla Tantithamthavorn, [DeepLineDP: Towards a Deep Learning Approach for Line-Level Defect Prediction (2023)](https://ieeexplore.ieee.org/document/9689967)_.
 
-## Suplementar articles
-- LineVD: Statement-level Vulnerability Detection using Graph Neural Networks
-  - Artykuł: https://arxiv.org/pdf/2203.05181.pdf
-  - GitHub: https://github.com/davidhin/linevd
-- VULGEN: Realistic Vulnerability Generation Via Pattern Mining and Deep Learning
-  - Artykuł: https://software-lab.org/publications/icse2023_VulGen.pdf
-  - GitHub: brak
-  - Zenodo: https://zenodo.org/record/7569854#.ZCXXYXZBxPY
+describe the necessary steps that we took throughout the proces and finally try to improve on the already achieved results.
 
 ## Project links
-- Overleaf: https://www.overleaf.com/project/6401cb6ce8e0e36a2d64e237
-- Trello: https://trello.com/b/rlZQmIfa/pbr-zadania
-- Google Colab: https://colab.research.google.com/drive/1N2QC_qhmjsM_PFjEKNV7z_tfkPNCpvyT?authuser=1#scrollTo=wYT-CKR476kG
+Another aim of the project was to document the whole process, plan and share responsibilities, 
+therefore we used following tools (links to actual projects):
+
+![overleaf.png](readme-images/overleaf.png) [Overleaf](https://www.overleaf.com/project/6401cb6ce8e0e36a2d64e237) \
+![trello.png](readme-images/trello.png) [Trello](https://trello.com/b/rlZQmIfa/pbr-zadania)
 
 ## Authors
-- Kamila Sproska
+![github.png](readme-images/github.png) [Kamila Sproska](https://github.com/ksproska)
 - Dominik Polak
 
 -------
-
-## Approach towards extending the original repository
+## Reproduction
+### Our approach towards extending the original repository
 Original repository for research paper was separated into two:
 - supplementary materials (scripts for training models) - 
 the original from [awsm-research/DeepLineDP](https://github.com/awsm-research/DeepLineDP) 
@@ -30,8 +27,8 @@ was pasted into [DeepLineDP/datasets](/DeepLineDP/datasets) folder.
 
 We decided to merge two repositories in order to make reproduction easier.
 
-## Preparation for reproduction
-Since models require CUDA to be able to run and not all computers can have it installed we decided to do a reproduction on google colab.
+### Preparation for reproduction
+Since models require CUDA to be able to run and not all computers can have it installed, we decided to do the reproduction on Google colab. \
 For this reason there are a couple of steps required to do before reproduction itself.
 
 1. Download this repository using _Download ZIP_ option. \
@@ -42,15 +39,15 @@ For this reason there are a couple of steps required to do before reproduction i
 
 3. Go to uploaded folder and find [reproduction.ipynb](/reproduction.ipynb) script. 
 Choose _Open with > Google Colaboratory_ option. \
-![img.png](readme-images/open-reproduction-script.png)
+![open-reproduction-script.png](readme-images/open-reproduction-script.png)
 
 4. Change runtime type to GPU _Change runtime type -> GPU -> Save_. \
-![img.png](readme-images/change-runtme-menu.png)
-![img.png](readme-images/change-to-GPU.png)
+![change-runtme-menu.png](readme-images/change-runtme-menu.png)
+![change-to-GPU.png](readme-images/change-to-GPU.png)
 
-## Running reproduction script
+### Running reproduction script
 All steps in [reproduction.ipynb](/reproduction.ipynb) have been described, however most notable remarks are:
 - When mounting Google Drive make sure you followed all the popup instructions and followed the setup correctly. 
 At the end setup should look somewhat like this: \
-![img.png](readme-images/google-collab-setup.png)
+![google-collab-setup.png](readme-images/google-collab-setup.png)
 - Not all lines need to be run each time, however all `pip install` commands have to be run at the beginning of each session.
