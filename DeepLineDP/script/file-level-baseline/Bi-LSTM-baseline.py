@@ -13,6 +13,7 @@ from gensim.models import Word2Vec
 from tqdm import tqdm
 
 from baseline_util import *
+import baseline_util
 
 # for importing file from previous directory
 sys.path.append('../')
@@ -33,7 +34,7 @@ torch.manual_seed(0)
 
 # model parameters
 
-batch_size = 32
+batch_size = 16
 embed_dim = 50
 hidden_dim = 64
 lr = 0.001
@@ -76,14 +77,14 @@ class LSTMClassifier(nn.Module):
 
         # dropout layer
         self.dropout = nn.Dropout(0.2)
-        
+
         # linear and sigmoid layer
         self.fc = nn.Linear(hidden_dim, 1)
         self.sig = nn.Sigmoid()
 
     def forward(self, input_tensor):
 
-        """ 
+        """
         Parameters
         ----------
         input_sentence: input_sentence of shape = (batch_size, num_sequences)
@@ -95,19 +96,19 @@ class LSTMClassifier(nn.Module):
         """
 
         # embedded input of shape = (batch_size, num_sequences,  embedding_length)
-        input = self.word_embeddings(input_tensor.type(torch.LongTensor).cuda()) 
+        input = self.word_embeddings(input_tensor.type(torch.LongTensor).cuda())
 
         # input.size() = (num_sequences, batch_size, embedding_length)
-        input = input.permute(1, 0, 2) 
+        input = input.permute(1, 0, 2)
         h_0 = Variable(torch.zeros(2, self.batch_size, self.hidden_size).cuda()) # Initialize hidden state of the LSTM
         c_0 = Variable(torch.zeros(2, self.batch_size, self.hidden_size).cuda()) # Initialize cell state of the LSTM
 
         lstm_out, (final_hidden_state, final_cell_state) = self.lstm(input, (h_0, c_0))
 
         output = self.fc(final_hidden_state[-1]) # the last hidden state is output of lstm model
-        
+
         sig_out = self.sig(output)
-        
+
         return sig_out
 
 def train_model(dataset_name):
@@ -132,7 +133,7 @@ def train_model(dataset_name):
     valid_rel = all_eval_releases[dataset_name][0]
 
     train_df = get_df(train_rel, is_baseline=True)
-    
+
     valid_df = get_df(valid_rel, is_baseline=True)
 
     train_code, train_label = prepare_data(train_df, to_lowercase = True)
@@ -143,14 +144,14 @@ def train_model(dataset_name):
     padding_idx = word2vec_model.wv.vocab['<pad>'].index
 
     vocab_size = len(word2vec_model.wv.vocab)+1
-        
-    train_dl = get_dataloader(word2vec_model, train_code,train_label, padding_idx, batch_size)
-    valid_dl = get_dataloader(word2vec_model, valid_code,valid_label, padding_idx, batch_size)
+
+    train_dl = baseline_util.get_dataloader(word2vec_model, train_code, train_label, padding_idx, batch_size)
+    valid_dl = baseline_util.get_dataloader(word2vec_model, valid_code, valid_label, padding_idx, batch_size)
 
     net = LSTMClassifier(batch_size, hidden_dim, vocab_size, embed_dim)
 
     net = net.cuda()
-    
+
     optimizer = optim.Adam(params=filter(lambda p: p.requires_grad, net.parameters()), lr=lr)
     criterion = nn.BCELoss()
 
@@ -161,14 +162,14 @@ def train_model(dataset_name):
 
     total_checkpoints = len(checkpoint_files)
 
-    # no model is trained 
+    # no model is trained
     if total_checkpoints == 0:
 
         current_checkpoint_num = 1
 
         train_loss_all_epochs = []
         val_loss_all_epochs = []
-    
+
     else:
         checkpoint_nums = [int(re.findall('\d+',s)[0]) for s in checkpoint_files]
         current_checkpoint_num = max(checkpoint_nums)
@@ -176,7 +177,7 @@ def train_model(dataset_name):
         checkpoint = torch.load(actual_save_model_dir+'checkpoint_'+str(current_checkpoint_num)+'epochs.pth')
         net.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-        
+
         loss_df = pd.read_csv(loss_dir+dataset_name+'-Bi-LSTM-loss_record.csv')
         train_loss_all_epochs = list(loss_df['train_loss'])
         val_loss_all_epochs = list(loss_df['valid_loss'])
@@ -197,13 +198,13 @@ def train_model(dataset_name):
         net.train()
 
         for inputs, labels in train_dl:
-            
+
             inputs, labels = inputs.cuda(), labels.cuda()
 
             net.zero_grad()
-            
+
             output = net(inputs)
-            
+
             # calculate the loss and perform backprop
             loss = criterion(output, labels.reshape(-1,1).float())
 
@@ -236,19 +237,19 @@ def train_model(dataset_name):
                         'epoch': e,
                         'model_state_dict': net.state_dict(),
                         'optimizer_state_dict': optimizer.state_dict()
-                        }, 
+                        },
                         actual_save_model_dir+'checkpoint_'+str(e)+'epochs.pth')
 
         loss_df = pd.DataFrame()
         loss_df['epoch'] = np.arange(1,len(train_loss_all_epochs)+1)
         loss_df['train_loss'] = train_loss_all_epochs
         loss_df['valid_loss'] = val_loss_all_epochs
-    
+
         loss_df.to_csv(loss_dir+dataset_name+'-Bi-LSTM-loss_record.csv',index=False)
 
     print('finished training model of',dataset_name)
 
-    
+
 # target_epochs (int): which epoch to load model
 def predict_defective_files_in_releases(dataset_name, target_epochs = 6):
     actual_save_model_dir = save_model_dir+dataset_name+'/'
@@ -260,7 +261,7 @@ def predict_defective_files_in_releases(dataset_name, target_epochs = 6):
     eval_rels = all_eval_releases[dataset_name][1:]
 
     word2vec_model = Word2Vec.load(w2v_dir)
-    
+
     vocab_size = len(word2vec_model.wv.vocab) + 1
 
     net = LSTMClassifier(1, hidden_dim, vocab_size, embed_dim)
@@ -270,10 +271,10 @@ def predict_defective_files_in_releases(dataset_name, target_epochs = 6):
     net.load_state_dict(checkpoint['model_state_dict'])
 
     net = net.cuda()
-    
+
     net.eval()
-    
-    
+
+
     for rel in eval_rels:
         row_list = []
 
@@ -297,12 +298,12 @@ def predict_defective_files_in_releases(dataset_name, target_epochs = 6):
             prediction = bool(round(file_prob))
 
             row_dict = {
-                        'project': dataset_name, 
-                        'train': train_rel, 
-                        'test': rel, 
-                        'filename': filename, 
-                        'file-level-ground-truth': file_label, 
-                        'prediction-prob': file_prob, 
+                        'project': dataset_name,
+                        'train': train_rel,
+                        'test': rel,
+                        'filename': filename,
+                        'file-level-ground-truth': file_label,
+                        'prediction-prob': file_prob,
                         'prediction-label': prediction
                         }
 
