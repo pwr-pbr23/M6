@@ -10,6 +10,27 @@ was pasted into [DeepLineDP/datasets](/DeepLineDP/datasets) folder.
 
 We decided to merge two repositories in order to make reproduction easier.
 
+## Preparation for reproduction
+Since models require CUDA to be able to run and not all computers can have it installed we decided to do a reproduction on google colab.
+For this reason there are a couple of steps required to do before reproduction itself.
+
+1. Download this repository using _Download ZIP_ option.
+![github-download-zip.png](readme-images/github-download-zip.png)
+
+2. Upload folder to drive to the main catalog (for this example the folder is called _M6_).
+![google-drive-placement.png](readme-images/google-drive-placement.png)
+
+3. Go to uploaded folder and find [reproduction.ipynb](/reproduction.ipynb) script. 
+Choose _Open with > Google Colaboratory_ option.
+![img.png](readme-images/open-reproduction-script.png)
+
+4. Change runtime type to GPU _Change runtime type -> GPU -> Save_.
+![img.png](readme-images/change-runtme-menu.png)
+![img.png](readme-images/change-to-GPU.png)
+
+## Running reproduction script
+...
+
 ## Suplementar articles
 - LineVD: Statement-level Vulnerability Detection using Graph Neural Networks
   - Artykuł: https://arxiv.org/pdf/2203.05181.pdf
