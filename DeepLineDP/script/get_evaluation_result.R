@@ -69,6 +69,7 @@ df.to.plot = df_all %>% filter(is.comment.line=="False" & file.level.ground.trut
 df.to.plot %>% ggplot(aes(x=variable, y=value)) + geom_boxplot() + scale_y_continuous(breaks=0:4*0.25) + xlab("") + ylab("")
 
 ggsave(paste0(save.fig.dir,"rq1-1.pdf"),width=2.5,height=2.5)
+ggsave(paste0(save.fig.dir,"rq1-1.png"),width=2.5,height=2.5)
 
 
 #RQ1-2
@@ -91,6 +92,7 @@ all.lines.token.score$class = factor(all.lines.token.score$class, levels = c('De
 
 all.lines.token.score %>% ggplot(aes(x=class, y=score)) + geom_boxplot() + xlab("")  + ylab("Riskiness Score") 
 ggsave(paste0(save.fig.dir,"rq1-2.pdf"),width=2.5,height=2.5)
+ggsave(paste0(save.fig.dir,"rq1-2.png"),width=2.5,height=2.5)
 
 res = cliff.delta(buggy.lines.token.score$score, clean.lines.token.score$score)
 

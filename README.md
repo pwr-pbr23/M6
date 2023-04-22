@@ -46,8 +46,13 @@ Choose _Open with > Google Colaboratory_ option. \
 ![change-to-GPU.png](readme-images/change-to-GPU.png)
 
 ### Running reproduction script
-All steps in [reproduction.ipynb](/reproduction.ipynb) have been described, however most notable remarks are:
+Overview of the whole process: 
+
+![overview.png](readme-images/overview.png)
+
+All those steps have been described in [reproduction.ipynb](/reproduction.ipynb), however most notable remarks to keep in mind are:
 - When mounting Google Drive make sure you followed all the popup instructions and followed the setup correctly. 
 At the end setup should look somewhat like this: \
 ![google-collab-setup.png](readme-images/google-collab-setup.png)
 - Not all lines need to be run each time, however all `pip install` commands have to be run at the beginning of each session.
+- The file is uploaded without cleared output, so that it is easier to recognize whether cell ran correctly (outputs should be similar).
