@@ -13,7 +13,7 @@ therefore we used following tools (links to actual projects):
 
 ## Authors
 ![github.png](readme-images/github.png) [Kamila Sproska](https://github.com/ksproska)
-- Dominik Polak
+![github.png](readme-images/github.png) [Dominik Polak](https://github.com/domppolak)
 
 -------
 ## Reproduction
