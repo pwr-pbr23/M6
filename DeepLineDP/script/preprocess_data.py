@@ -18,6 +18,7 @@ line_lvl_dir = data_root_dir + 'Line-level/'
 
 # preprocessing enhancements
 ignore_imports = False
+replace_exceptions = False
 
 
 def is_comment_line(code_line, comments_list):
@@ -70,6 +71,13 @@ def preprocess_code_line(code_line):
 
     if ignore_imports and code_line.startswith("import "):
         code_line = ""
+
+    if replace_exceptions and "Exception" in code_line:
+        pat = r'\b\S*%s\S*\b' % re.escape("Exception")
+        list_of_exceptions = re.findall(pat, code_line)
+        for e in list_of_exceptions:
+            if e[0].isupper():
+                code_line = code_line.replace(e, "Exception")
 
     for char in char_to_remove:
         code_line = code_line.replace(char, ' ')
