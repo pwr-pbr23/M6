@@ -57,3 +57,14 @@ At the end setup should look somewhat like this: \
 ![google-collab-setup.png](readme-images/google-collab-setup.png)
 - Not all lines need to be run each time, however all `pip install` commands have to be run at the beginning of each session.
 - The file is uploaded without cleared output, so that it is easier to recognize whether cell ran correctly (outputs should be similar).
+
+### Results of the reproduction
+#### For all databases
+| file-Effort@Top20Recall (↗)                                           | file-Recall@Top20LOC (↘)                                           | file-IFA (↘)                                           |
+|-----------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------|
+| ![](readme-images/original-all-databases/file-Effort@Top20Recall.png) | ![](readme-images/original-all-databases/file-Recall@Top20LOC.png) | ![](readme-images/original-all-databases/file-IFA.png) |
+
+#### For activemq
+| file-Effort@Top20Recall (↗)                                      | file-Recall@Top20LOC (↘)                                      | file-IFA (↘)                                      |
+|------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------|
+| ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/original-activemq/file-Recall@Top20LOC.png) | ![](readme-images/original-activemq/file-IFA.png) |
