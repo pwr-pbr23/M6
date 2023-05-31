@@ -1,5 +1,5 @@
-import pandas as pd
-import os, re
+import os
+
 import numpy as np
 from tqdm import tqdm
 
@@ -15,6 +15,9 @@ if not os.path.exists(save_dir):
 
 file_lvl_dir = data_root_dir + 'File-level/'
 line_lvl_dir = data_root_dir + 'Line-level/'
+
+# preprocessing enhancements
+ignore_imports = False
 
 
 def is_comment_line(code_line, comments_list):
@@ -64,6 +67,9 @@ def preprocess_code_line(code_line):
     code_line = re.sub('\b\d+\b','',code_line)
     code_line = re.sub("\\[.*?\\]", '', code_line)
     code_line = re.sub("[\\.|,|:|;|{|}|(|)]", ' ', code_line)
+
+    if ignore_imports and code_line.startswith("import "):
+        code_line = ""
 
     for char in char_to_remove:
         code_line = code_line.replace(char, ' ')
@@ -129,7 +135,7 @@ def create_code_df(code_str, filename):
 def preprocess_data(proj_name):
     cur_all_rel = all_releases[proj_name]
 
-    for rel in cur_all_rel:
+    for rel in tqdm(cur_all_rel):
         file_level_data = pd.read_csv(file_lvl_dir + rel + '_ground-truth-files_dataset.csv', encoding='latin')
         line_level_data = pd.read_csv(line_lvl_dir + rel + '_defective_lines_dataset.csv', encoding='latin')
 
@@ -163,8 +169,9 @@ def preprocess_data(proj_name):
         all_df = pd.concat(preprocessed_df_list)
         save_filename = save_dir + rel + ".csv"
         all_df.to_csv(save_filename, index=False)
-        print(f'finish release {rel} - {save_filename}')
+        # print(f'finish release {rel} - {save_filename}')
 
 
-for proj in tqdm(list(all_releases.keys())):
+for proj in list(all_releases.keys()):
+    print(f"Project: {proj}")
     preprocess_data(proj)
