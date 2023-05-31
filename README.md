@@ -60,11 +60,11 @@ At the end setup should look somewhat like this: \
 
 ### Results of the reproduction
 #### For all databases
-| file-Effort@Top20Recall (↗)                                           | file-Recall@Top20LOC (↘)                                           | file-IFA (↘)                                           |
+| file-Effort@Top20Recall (↘)                                           | file-Recall@Top20LOC (↗)                                           | file-IFA (↘)                                           |
 |-----------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------|
 | ![](readme-images/original-all-databases/file-Effort@Top20Recall.png) | ![](readme-images/original-all-databases/file-Recall@Top20LOC.png) | ![](readme-images/original-all-databases/file-IFA.png) |
 
 #### For activemq
-| file-Effort@Top20Recall (↗)                                      | file-Recall@Top20LOC (↘)                                      | file-IFA (↘)                                      |
+| file-Effort@Top20Recall (↘)                                      | file-Recall@Top20LOC (↗)                                      | file-IFA (↘)                                      |
 |------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------|
 | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/original-activemq/file-Recall@Top20LOC.png) | ![](readme-images/original-activemq/file-IFA.png) |
