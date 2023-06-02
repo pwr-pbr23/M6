@@ -19,6 +19,8 @@ line_lvl_dir = data_root_dir + 'Line-level/'
 # preprocessing enhancements
 ignore_imports = False
 replace_exceptions = False
+remove_public_keyword = False
+remove_final_keyword = False
 
 
 def is_comment_line(code_line, comments_list):
@@ -78,6 +80,12 @@ def preprocess_code_line(code_line):
         for e in list_of_exceptions:
             if e[0].isupper():
                 code_line = code_line.replace(e, "Exception")
+
+    if remove_public_keyword and "public":
+        code_line = code_line.replace("public ", "")
+
+    if remove_final_keyword and "final":
+        code_line = code_line.replace("final ", "")
 
     for char in char_to_remove:
         code_line = code_line.replace(char, ' ')
@@ -180,8 +188,10 @@ def preprocess_data(proj_name):
         # print(f'finish release {rel} - {save_filename}')
 
 
-print(f"Imports ignored:     {ignore_imports}")
-print(f"Exceptions replaced: {replace_exceptions}")
+print(f"Imports ignored:       {ignore_imports}")
+print(f"Exceptions replaced:   {replace_exceptions}")
+print(f"Remove public keyword: {remove_public_keyword}")
+print(f"Remove final keyword:  {remove_final_keyword}")
 print()
 
 for proj in list(all_releases.keys()):
