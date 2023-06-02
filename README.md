@@ -70,7 +70,7 @@ At the end setup should look somewhat like this: \
 | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/original-activemq/file-Recall@Top20LOC.png) | ![](readme-images/original-activemq/file-IFA.png) |
 
 ## Improvements
-### Removing imports
+### Exceptions replaced
 
 |     | Original (activemq only)                                         | Exceptions replaced (activemq only)                                         |
 |-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
