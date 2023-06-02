@@ -68,3 +68,12 @@ At the end setup should look somewhat like this: \
 | file-Effort@Top20Recall (↘)                                      | file-Recall@Top20LOC (↗)                                      | file-IFA (↘)                                      |
 |------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------|
 | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/original-activemq/file-Recall@Top20LOC.png) | ![](readme-images/original-activemq/file-IFA.png) |
+
+## Improvements
+### Removing imports
+
+|     | Original (activemq only)                                         | Exceptions replaced (activemq only)                                         |
+|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/exceptions-replaced-activemq/file-Effort@Top20Recall.png) |
+| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/exceptions-replaced-activemq/file-Recall@Top20LOC.png)    |
+| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/exceptions-replaced-activemq/file-IFA.png)                |
