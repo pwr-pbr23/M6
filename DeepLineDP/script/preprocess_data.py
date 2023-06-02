@@ -180,6 +180,10 @@ def preprocess_data(proj_name):
         # print(f'finish release {rel} - {save_filename}')
 
 
+print(f"Imports ignored:     {ignore_imports}")
+print(f"Exceptions replaced: {replace_exceptions}")
+print()
+
 for proj in list(all_releases.keys()):
     print(f"Project: {proj}")
     preprocess_data(proj)
