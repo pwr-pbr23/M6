@@ -70,7 +70,7 @@ def preprocess_code_line(code_line):
     code_line = re.sub("[\\.|,|:|;|{|}|(|)]", ' ', code_line)
 
     if ignore_imports and code_line.startswith("import "):
-        code_line = ""
+        code_line = "// import"
 
     if replace_exceptions and "Exception" in code_line:
         pat = r'\b\S*%s\S*\b' % re.escape("Exception")
