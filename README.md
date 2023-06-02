@@ -85,3 +85,19 @@ At the end setup should look somewhat like this: \
 | ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/import-replaced_activemq/file-Effort@Top20Recall.png) |
 | ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/import-replaced_activemq/file-Recall@Top20LOC.png)    |
 | ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/import-replaced_activemq/file-IFA.png)                |
+
+### Public remove
+
+|     | Original (activemq only)                                         | Public remove (activemq only)                                               |
+|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/public-replaced-activemq/file-Effort@Top20Recall.png) |
+| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/public-replaced-activemq/file-Recall@Top20LOC.png)    |
+| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/public-replaced-activemq/file-IFA.png)                |
+
+### Final remove
+
+|     | Original (activemq only)                                         | Final remov (activemq only)                                                 |
+|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/final-replace-qctivemq/file-Effort@Top20Recall.png) |
+| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/final-replace-qctivemq/file-Recall@Top20LOC.png)    |
+| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/final-replace-qctivemq/file-IFA.png)                |
