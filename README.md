@@ -96,8 +96,16 @@ At the end setup should look somewhat like this: \
 
 ### Final remove
 
-|     | Original (activemq only)                                         | Final remov (activemq only)                                                 |
-|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/final-replace-qctivemq/file-Effort@Top20Recall.png) |
-| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/final-replace-qctivemq/file-Recall@Top20LOC.png)    |
-| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/final-replace-qctivemq/file-IFA.png)                |
+|   | Original (activemq only)                                         | Final remove (activemq only)                                          |
+|---|------------------------------------------------------------------|-----------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/final-replace-qctivemq/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/final-replace-qctivemq/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/final-replace-qctivemq/file-IFA.png)                |
+
+### Hidden layer added
+
+|   | Original (activemq only)                                         | Hidden layer added (activemq only)                                   |
+|---|------------------------------------------------------------------|----------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/hidden-layer-activemq/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/hidden-layer-activemq/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/hidden-layer-activemq/file-IFA.png)                |

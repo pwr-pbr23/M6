@@ -2,6 +2,8 @@ import torch.nn as nn
 import torch
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, PackedSequence
 
+add_hidden_layer = False
+force_retrain = add_hidden_layer
 
 # Model structure
 class HierarchicalAttentionNetwork(nn.Module):
@@ -24,7 +26,14 @@ class HierarchicalAttentionNetwork(nn.Module):
             vocab_size, embed_dim, word_gru_hidden_dim, sent_gru_hidden_dim,
             word_gru_num_layers, sent_gru_num_layers, word_att_dim, sent_att_dim, use_layer_norm, dropout)
 
-        self.fc = nn.Linear(2 * sent_gru_hidden_dim, 1)
+        if add_hidden_layer:
+            self.fc = nn.Sequential(
+                nn.Linear(in_features=2 * sent_gru_hidden_dim, out_features=sent_gru_hidden_dim),
+                nn.ReLU(),
+                nn.Linear(in_features=sent_gru_hidden_dim, out_features=1)
+            )
+        else:
+            self.fc = nn.Linear(2 * sent_gru_hidden_dim, 1)
         self.sig = nn.Sigmoid()
 
         self.use_layer_nome = use_layer_norm

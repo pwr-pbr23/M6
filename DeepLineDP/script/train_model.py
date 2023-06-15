@@ -154,7 +154,7 @@ def train_model(dataset_name):
     total_checkpoints = len(checkpoint_files)
 
     # no model is trained 
-    if total_checkpoints == 0:
+    if total_checkpoints == 0 or force_retrain:
         model.sent_attention.word_attention.init_embeddings(word2vec_weights)
         current_checkpoint_num = 1
 
