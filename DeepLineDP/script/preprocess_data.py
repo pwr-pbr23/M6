@@ -21,6 +21,8 @@ ignore_imports = False
 replace_exceptions = False
 remove_public_keyword = False
 remove_final_keyword = False
+normalize_names = False
+remove_duplication_line = True
 
 
 def is_comment_line(code_line, comments_list):
@@ -57,6 +59,7 @@ def is_empty_line(code_line):
 
     return False
 
+seen_lines = set()
 
 def preprocess_code_line(code_line):
     """
@@ -89,6 +92,16 @@ def preprocess_code_line(code_line):
 
     for char in char_to_remove:
         code_line = code_line.replace(char, ' ')
+
+    if normalize_names:
+        code_line = code_line.strip()
+
+    if remove_duplication_line:
+      if code_line in seen_lines:
+          return None
+    else:
+      seen_lines.add(code_line)
+      return code_line
 
     code_line = code_line.strip()
 
