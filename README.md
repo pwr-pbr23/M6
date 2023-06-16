@@ -109,3 +109,10 @@ At the end setup should look somewhat like this: \
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/hidden-layer-activemq/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/hidden-layer-activemq/file-Recall@Top20LOC.png)    |
 | ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/hidden-layer-activemq/file-IFA.png)                |
+
+### Duplicate line remove
+|   | Original (activemq only)                                         | Duplicate line remove (activemq only)                                 |
+|---|------------------------------------------------------------------|-----------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/remove-duplicate/file-Effort@Top20Recall.png)       |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/remove-duplicate/file-Recall@Top20LOC.png)          |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/remove-duplicate/file-IFA.png)                      |
