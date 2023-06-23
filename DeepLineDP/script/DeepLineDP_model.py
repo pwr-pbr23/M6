@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, PackedSequence
 
-add_hidden_layer = False
+add_hidden_layer = True
 force_retrain = add_hidden_layer
 
 # Model structure
@@ -75,7 +75,7 @@ class SentenceAttention(nn.Module):
 
         # Bidirectional sentence-level GRU
         self.gru = nn.GRU(2 * word_gru_hidden_dim, sent_gru_hidden_dim, num_layers=sent_gru_num_layers,
-                          batch_first=True, bidirectional=True, dropout=dropout)
+                          batch_first=True, bidirectional=True, dropout=dropout)  # GRU -> LSTM
 
         self.use_layer_norm = use_layer_norm
         if use_layer_norm:
