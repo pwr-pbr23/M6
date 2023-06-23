@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, PackedSequence
 
-add_hidden_layer = True
+add_hidden_layer = False
 force_retrain = add_hidden_layer
 
 # Model structure
