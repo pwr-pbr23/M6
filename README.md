@@ -70,6 +70,23 @@ At the end setup should look somewhat like this: \
 | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/original-activemq/file-Recall@Top20LOC.png) | ![](readme-images/original-activemq/file-IFA.png) |
 
 ## Improvements
+In order to set a specific type of change it is needed to set specific flags.
+In [DeepLineDP_model.py](DeepLineDP/script/DeepLineDP_model.py) and in [preprocess_data.py](DeepLineDP/script/preprocess_data.py)
+there are following flags:
+
+| Flag                    | Function                                                  |
+|-------------------------|-----------------------------------------------------------|
+| ignore_imports          | Changes all import lines to comment containing `#import`  |
+| replace_exceptions      | Replaces all *Exception classes to Exception              |
+| remove_public_keyword   | Removes keyword public                                    |
+| remove_final_keyword    | Removes keyword final                                     |
+| normalize_names         | Removes whitespaces before and after each line            |
+| remove_duplication_line | Removes all duplicated lines (that have already appeared) |
+| add_hidden_layer        | Adds one hidden FC layer                                  |
+
+Each flag has a default value `False` therefore in order to tes a certain type of change
+it is necessary before running [reproduction script](reproduction.ipynb) to <ins>**change chosen flag(s) to `true`**</ins>.
+
 ### Exceptions replaced
 
 |     | Original (activemq only)                                         | Exceptions replaced (activemq only)                                         |
@@ -80,19 +97,19 @@ At the end setup should look somewhat like this: \
 
 ### Imports replaced with comment
 
-|     | Original (activemq only)                                         | Imports replaced with comment (activemq only)                               |
-|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/import-replaced_activemq/file-Effort@Top20Recall.png) |
-| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/import-replaced_activemq/file-Recall@Top20LOC.png)    |
-| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/import-replaced_activemq/file-IFA.png)                |
+|   | Original (activemq only)                                         | Imports replaced with comment (activemq only)                           |
+|---|------------------------------------------------------------------|-------------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/import-replaced_activemq/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/import-replaced_activemq/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/import-replaced_activemq/file-IFA.png)                |
 
 ### Public remove
 
-|     | Original (activemq only)                                         | Public remove (activemq only)                                               |
-|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/public-replaced-activemq/file-Effort@Top20Recall.png) |
-| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/public-replaced-activemq/file-Recall@Top20LOC.png)    |
-| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/public-replaced-activemq/file-IFA.png)                |
+|   | Original (activemq only)                                         | Public remove (activemq only)                                           |
+|---|------------------------------------------------------------------|-------------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/public-replaced-activemq/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/public-replaced-activemq/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/public-replaced-activemq/file-IFA.png)                |
 
 ### Final remove
 

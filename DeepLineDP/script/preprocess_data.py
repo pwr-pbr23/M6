@@ -22,7 +22,7 @@ replace_exceptions = False
 remove_public_keyword = False
 remove_final_keyword = False
 normalize_names = False
-remove_duplication_line = True
+remove_duplication_line = False
 
 
 def is_comment_line(code_line, comments_list):
