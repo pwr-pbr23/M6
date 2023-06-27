@@ -142,7 +142,7 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 |---|------------------------------------------------------------------|----------------------------------------------------------------------|
 | ↘ | ![](readme-images/additional_metrics/file-Effort@Top20Recall.png) | ![](readme-images/additional_metrics/file-Precision.png)            |
 | ↗ | ![](readme-images/additional_metrics/file-Recall@Top20LOC.png)    | ![](readme-images/additional_metrics/file-MCC.png)                  |
-| ↘ | ![](readme-images/additional_metricss/file-IFA.png)                | ![](readme-images/additional_metrics/file-BalancedAccuracy.png)     |
+| ↘ | ![](readme-images/additional_metrics/file-IFA.png)                | ![](readme-images/additional_metrics/file-BalancedAccuracy.png)     |
 
 ### Result for not preprocessed data
 
