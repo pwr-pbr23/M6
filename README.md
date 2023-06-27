@@ -127,9 +127,27 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/hidden-layer-activemq/file-Recall@Top20LOC.png)    |
 | ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/hidden-layer-activemq/file-IFA.png)                |
 
+
+
 ### Duplicate line remove
 |   | Original                                                         | Duplicate line remove                                           |
 |---|------------------------------------------------------------------|-----------------------------------------------------------------|
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/remove-duplicate/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/remove-duplicate/file-Recall@Top20LOC.png)    |
 | ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/remove-duplicate/file-IFA.png)                |
+
+### Result for additional metrics
+
+|   |                                                                     |                                                                   |
+|---|------------------------------------------------------------------|----------------------------------------------------------------------|
+| ↘ | ![](readme-images/additional_metrics/file-Effort@Top20Recall.png) | ![](readme-images/additional_metrics/file-Precision.png)            |
+| ↗ | ![](readme-images/additional_metrics/file-Recall@Top20LOC.png)    | ![](readme-images/additional_metrics/file-MCC.png)                  |
+| ↘ | ![](readme-images/additional_metricss/file-IFA.png)                | ![](readme-images/additional_metrics/file-BalancedAccuracy.png)     |
+
+### Result for not preprocessed data
+
+|   |                                                                     |                                                                   |
+|---|------------------------------------------------------------------|----------------------------------------------------------------------|
+| ↘ | ![](readme-images/notpreprocesdata/file-Effort@Top20Recall.png) | ![](readme-images/notpreprocesdata/file-Precision.png)                |
+| ↗ | ![](readme-images/notpreprocesdata/file-Recall@Top20LOC.png)    | ![](readme-images/notpreprocesdata/file-MCC.png)                      |
+| ↘ | ![](readme-images/notpreprocesdata/file-IFA.png)                | ![](readme-images/notpreprocesdata/file-BalancedAccuracy.png)         |
