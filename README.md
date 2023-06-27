@@ -89,15 +89,15 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 
 ### Exceptions replaced
 
-|     | Original (activemq only)                                         | Exceptions replaced (activemq only)                                         |
-|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| ↘   | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/exceptions-replaced-activemq/file-Effort@Top20Recall.png) |
-| ↗   | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/exceptions-replaced-activemq/file-Recall@Top20LOC.png)    |
-| ↘   | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/exceptions-replaced-activemq/file-IFA.png)                |
+|   | Original                                                         | Exceptions replaced                                                         |
+|---|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/exceptions-replaced-activemq/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/exceptions-replaced-activemq/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/exceptions-replaced-activemq/file-IFA.png)                |
 
 ### Imports replaced with comment
 
-|   | Original (activemq only)                                         | Imports replaced with comment (activemq only)                           |
+|   | Original                                                         | Imports replaced with comment                                           |
 |---|------------------------------------------------------------------|-------------------------------------------------------------------------|
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/import-replaced_activemq/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/import-replaced_activemq/file-Recall@Top20LOC.png)    |
@@ -105,7 +105,7 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 
 ### Public remove
 
-|   | Original (activemq only)                                         | Public remove (activemq only)                                           |
+|   | Original                                                         | Public remove                                                           |
 |---|------------------------------------------------------------------|-------------------------------------------------------------------------|
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/public-replaced-activemq/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/public-replaced-activemq/file-Recall@Top20LOC.png)    |
@@ -113,7 +113,7 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 
 ### Final remove
 
-|   | Original (activemq only)                                         | Final remove (activemq only)                                          |
+|   | Original                                                         | Final remove                                                          |
 |---|------------------------------------------------------------------|-----------------------------------------------------------------------|
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/final-replace-qctivemq/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/final-replace-qctivemq/file-Recall@Top20LOC.png)    |
@@ -121,15 +121,15 @@ it is necessary before running [reproduction script](reproduction.ipynb) to <ins
 
 ### Hidden layer added
 
-|   | Original (activemq only)                                         | Hidden layer added (activemq only)                                   |
+|   | Original                                                         | Hidden layer added                                                   |
 |---|------------------------------------------------------------------|----------------------------------------------------------------------|
 | ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/hidden-layer-activemq/file-Effort@Top20Recall.png) |
 | ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/hidden-layer-activemq/file-Recall@Top20LOC.png)    |
 | ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/hidden-layer-activemq/file-IFA.png)                |
 
 ### Duplicate line remove
-|   | Original (activemq only)                                         | Duplicate line remove (activemq only)                                 |
-|---|------------------------------------------------------------------|-----------------------------------------------------------------------|
-| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/remove-duplicate/file-Effort@Top20Recall.png)       |
-| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/remove-duplicate/file-Recall@Top20LOC.png)          |
-| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/remove-duplicate/file-IFA.png)                      |
+|   | Original                                                         | Duplicate line remove                                           |
+|---|------------------------------------------------------------------|-----------------------------------------------------------------|
+| ↘ | ![](readme-images/original-activemq/file-Effort@Top20Recall.png) | ![](readme-images/remove-duplicate/file-Effort@Top20Recall.png) |
+| ↗ | ![](readme-images/original-activemq/file-Recall@Top20LOC.png)    | ![](readme-images/remove-duplicate/file-Recall@Top20LOC.png)    |
+| ↘ | ![](readme-images/original-activemq/file-IFA.png)                | ![](readme-images/remove-duplicate/file-IFA.png)                |
