@@ -57,6 +57,7 @@ At the end setup should look somewhat like this: \
 ![google-collab-setup.png](readme-images/google-collab-setup.png)
 - Not all lines need to be run each time, however all `pip install` commands have to be run at the beginning of each session.
 - The file is uploaded without cleared output, so that it is easier to recognize whether cell ran correctly (outputs should be similar).
+- **To check reporoduction with applied changes go to /content/drive/MyDrive/M6/DeepLineDP/script/preprocess_data.py and change flag `ignore_imports` to `True`**
 
 ### Results of the reproduction
 #### For all databases
